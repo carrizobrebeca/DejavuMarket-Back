@@ -1,21 +1,26 @@
 const { Producto } = require('../db');
 
 
-const getProductos = async (nombre) => {
+const getProducts = async (nombre) => {
  
 
-    const productosDb = await Producto.findAll({
-      where: nombre === nombre // Aplica la cláusula 'where' para filtrar los productos.
-    });
+  let whereClause = {};  // Declaramos una cláusula where vacía
 
-    if (productosDb.length === 0) {
-      return res.status(404).json({ message: 'No se encontraron productos.' });
-    }
+  // Si se pasa el nombre, agregamos el filtro a la cláusula where
+  if (nombre) {
+    whereClause = {
+      nombre: nombre  // Filtramos por el nombre que viene como argumento
+    };
+  }
 
-    return res.status(200).json(productosDb);
+  // Hacemos la consulta con el filtro correspondiente
+  const productosDb = await Producto.findAll({
+    where: whereClause
+  });
+    return productosDb
  
 };
 
-module.exports = getProductos;
+module.exports = {getProducts};
 
 

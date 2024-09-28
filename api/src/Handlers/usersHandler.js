@@ -10,9 +10,9 @@ const postUsersHandler = async (req, res) => {
   
   try {
     const response = await postProductos(nombre, apellido, email, password, imagen );
-    res.status(200).jason(response);
+    res.status(200).json(response);
  } catch (error) {
-    res.status(400).jason({error: error.message});
+    res.status(400).json({error: error.message});
  }  
 };
 
