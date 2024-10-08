@@ -2,7 +2,7 @@ const { Router } = require("express");
 const {
   postUsersHandler,
   getUsersHandler,
-} = require("../Handlers/UsersHandler");
+} = require("../Handlers/usersHandler");
 
 const usersRouter = Router();
 
