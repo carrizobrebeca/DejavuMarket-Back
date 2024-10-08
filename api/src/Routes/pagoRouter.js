@@ -5,6 +5,6 @@ const pagoRouter = Router();
 
 pagoRouter.get("/", getPagoHandler)
  
- pagoRouter.post("/", postPagoHandler)
+pagoRouter.post("/", postPagoHandler)
  
  module.exports = pagoRouter;
