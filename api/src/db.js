@@ -18,7 +18,7 @@ const testConnection = async () => {
     await sequelize.authenticate();
     console.log('Conexión establecida con éxito.');
 
-    const results = await sequelize.query('SELECT * FROM Producto');
+    const results = await sequelize.query('SELECT * FROM Productos');
     console.log('Resultados:', results);
   } catch (error) {
     console.error('No se pudo conectar a la base de datos:', error);
