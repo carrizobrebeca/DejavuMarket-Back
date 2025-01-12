@@ -1,4 +1,4 @@
-const { Producto } = require('../db');
+const { Productos } = require('../db');
 
 
 const getProducts = async (nombre) => {
@@ -14,7 +14,7 @@ const getProducts = async (nombre) => {
   }
 
   // Hacemos la consulta con el filtro correspondiente
-  const productosDb = await Producto.findAll({
+  const productosDb = await Productos.findAll({
     where: whereClause
   });
     return productosDb
