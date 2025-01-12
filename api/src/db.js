@@ -10,7 +10,7 @@ const sequelize = new Sequelize(DATABASE_URL, {
 });
 
 // Carga de modelos
-const Producto = productsModel(sequelize);
+const Productos = productsModel(sequelize);
 
 // Función para probar la conexión
 const testConnection = async () => {
