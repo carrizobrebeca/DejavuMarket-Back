@@ -10,7 +10,7 @@ const sequelize = new Sequelize(DATABASE_URL, {
 });
 
 // Carga de modelos
-const Productos = productsModel(sequelize);
+const Producto = productsModel(sequelize);
 
 // Función para probar la conexión
 const testConnection = async () => {
@@ -18,7 +18,7 @@ const testConnection = async () => {
     await sequelize.authenticate();
     console.log('Conexión establecida con éxito.');
 
-    const results = await sequelize.query('SELECT * FROM Productos');
+    const results = await sequelize.query('SELECT * FROM Producto');
     console.log('Resultados:', results);
   } catch (error) {
     console.error('No se pudo conectar a la base de datos:', error);
