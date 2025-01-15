@@ -6,10 +6,15 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors({
-  origin: '*',
-  credentials: true
-}));
+const corsOptions = {
+  origin: 'https://carrizobrebeca.github.io/DejaVuMarket/', 
+  methods: 'GET, POST, PUT, DELETE',
+  allowedHeaders: 'Content-Type, Authorization',
+  credentials: true, 
+};
+
+
+app.use(cors(corsOptions));
 app.use(morgan('dev'));
 
 app.use((req, res, next) => {
